@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 formcls">
+      <h4>Contact form</h4>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>Username</label>
+    <input formControlName="fullname" class="form-control" >
+    <span class="dirtycls" *ngIf="(fullname.dirty || fullname.touched) && fullname.invalid && fullname.errors.required">
+      Username is required.
+    </span>
+    <span class="dirtycls" *ngIf="(fullname.dirty || fullname.touched) && fullname.invalid && fullname.errors.nowhiteSpace">
+      No white space
+    </span>
+    <br />
+    </div>
+    <div class="form-group">
+   <label>Email</label>
+  <input formControlName="email" class="form-control" >
+  <span  class="dirtycls" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required">
+    Email is required.
+  </span>
+  <span class="dirtycls" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.invalidEmail">
+    Value has to be a valid email address.
+  </span>
+  <br />
+  </div>
+  <div class="form-group">
+    <label>Mobile</label>
+  <input formControlName="mobile" class="form-control">
+  <span class="dirtycls" *ngIf="(mobile.dirty || mobile.touched) && mobile.invalid && mobile.errors.required">
+    Mobile is required.
+  </span>
+  <span class="dirtycls" *ngIf="(mobile.dirty || mobile.touched) && mobile.invalid && mobile.errors.invalidNumber">
+    Value has to be a number.
+  </span>
+  <br />
+</div>
+<div class="form-group">
+<label>Massage</label>
+<textarea  formControlName="message" class="form-control" cols="30" rows="6"></textarea>
+</div>
+  <br />
+  <button type="submit" [disabled]="!contactForm.valid" class="btn btn-primary">Save</button> | <button type="reset" (click)="revert()" class="btn btn-primary">Revert</button>
+</form>
+</div>
+</div>
+</div>
+   

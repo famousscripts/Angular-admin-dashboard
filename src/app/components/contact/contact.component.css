@@ -1,0 +1,27 @@
+.ng-valid,
+.ng-valid.required {
+  background-color: lightgreen;
+}
+
+.ng-invalid:not(form) {
+  background-color: lightcoral;
+}
+
+.formcls h4 {
+  padding: 0 0 15px 0;
+}
+
+.form-group {
+  margin-bottom: 0px!important;
+}
+
+.dirtycls {
+  color: red;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+
+.ng-valid[_ngcontent-c2], .ng-valid.required[_ngcontent-c2] {
+  background-color: ghostwhite;
+}
