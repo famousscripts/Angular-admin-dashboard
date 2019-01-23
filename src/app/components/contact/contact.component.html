@@ -1,10 +1,11 @@
-<div class="container">
-  <div class="row">
+<div class="card container">
+  <div class="row card-body">
     <div class="col-md-6 formcls">
-      <h4>Contact form</h4>
+      <h3 class="card-title">Contact form</h3>
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
-    <label>Username</label>
+      <!–– showing * on the basis of control name plus class showing-->
+    <label>Username <span *ngIf = "fullname?.errors" [ngClass]="'errors'">*</span></label> 
     <input formControlName="fullname" class="form-control" >
     <span class="dirtycls" *ngIf="(fullname.dirty || fullname.touched) && fullname.invalid && fullname.errors.required">
       Username is required.
@@ -15,7 +16,7 @@
     <br />
     </div>
     <div class="form-group">
-   <label>Email</label>
+   <label>Email <span *ngIf = "email?.errors" [ngClass]="'errors'">*</span></label>
   <input formControlName="email" class="form-control" >
   <span  class="dirtycls" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required">
     Email is required.
@@ -26,7 +27,7 @@
   <br />
   </div>
   <div class="form-group">
-    <label>Mobile</label>
+    <label>Mobile <span *ngIf = "mobile?.errors" [ngClass]="'errors'">*</span></label>
   <input formControlName="mobile" class="form-control">
   <span class="dirtycls" *ngIf="(mobile.dirty || mobile.touched) && mobile.invalid && mobile.errors.required">
     Mobile is required.

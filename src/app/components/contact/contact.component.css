@@ -4,11 +4,16 @@
 }
 
 .ng-invalid:not(form) {
-  background-color: lightcoral;
+  background-color:#f5baba;
 }
 
 .formcls h4 {
   padding: 0 0 15px 0;
+}
+
+.card-title {
+  margin-bottom: 1.75rem;
+  font-family: inherit;
 }
 
 .form-group {
@@ -24,4 +29,8 @@
 
 .ng-valid[_ngcontent-c2], .ng-valid.required[_ngcontent-c2] {
   background-color: ghostwhite;
+}
+
+.errors {
+    color: red;
 }

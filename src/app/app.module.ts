@@ -12,6 +12,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { MessageService } from './services/message.service';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { PageComponent } from './components/page/page.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
   declarations: [
@@ -22,12 +25,15 @@ import { MessageService } from './services/message.service';
     PortfolioComponent,
     ModalComponent,
     ContactComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    PagenotfoundComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    EditorModule
   ],
   providers: [ModalService, MessageService],
   bootstrap: [AppComponent]
